@@ -1,4 +1,6 @@
-import { clientId, redirectUri } from "../const";
+import { redirectUri } from "../const";
+
+const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
 async function generateCodeChallenge(codeVerifier: string) {
   const data = new TextEncoder().encode(codeVerifier);
