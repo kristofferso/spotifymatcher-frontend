@@ -1,4 +1,4 @@
-import { backendUrl } from "../const";
+const backendUrl = import.meta.env.VITE_BACKEND_HOSTNAME + "/api/v1";
 
 type ProfileData = {
   spotifyUserId: string;

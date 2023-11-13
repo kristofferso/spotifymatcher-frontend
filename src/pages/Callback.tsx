@@ -9,7 +9,8 @@ import {
   fetchTopArtists,
   getAccessToken,
 } from "../lib/spotifyHelpers";
-import { frontendBaseUrl } from "../const";
+
+const frontendBaseUrl = import.meta.env.VITE_FRONTEND_HOSTNAME;
 
 function Callback() {
   const code = new URLSearchParams(window.location.search).get("code");
@@ -121,9 +122,12 @@ function Callback() {
             {artistsInCommon.map((artist: any) => (
               <li key={artist.artistId}>
                 <p>{artist.artistName}</p>
-                <span>{compareWithUserName} sin plassering: {artist.userBRank}</span>
-                <span>{profile?.display_name} sin plassering: {artist.userARank}</span>
-
+                <span>
+                  {compareWithUserName} sin plassering: {artist.userBRank}
+                </span>
+                <span>
+                  {profile?.display_name} sin plassering: {artist.userARank}
+                </span>
               </li>
             ))}
           </ul>

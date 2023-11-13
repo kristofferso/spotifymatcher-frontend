@@ -1,5 +1,4 @@
-import { redirectUri } from "../const";
-
+const redirectUri = import.meta.env.VITE_FRONTEND_HOSTNAME + "/callback";
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
 async function generateCodeChallenge(codeVerifier: string) {
